@@ -34,3 +34,4 @@ for ticker in crypto:
     plt.plot(combined[ticker], label=ticker)
 
 plt.legend(loc = 'upper left')
+plt.show()
