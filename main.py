@@ -28,10 +28,7 @@ for ticker in crypto:
         colnames.append(ticker)
         combined.columns = colnames
 
-plt.yscale('log')
 
-for ticker in crypto:
-    plt.plot(combined[ticker], label=ticker)
-
-plt.legend(loc = 'upper left')
+combined = combined.pct_change().corr(method='pearson')
+sns.heatmap(combined, annot=True, cmap='coolwarm')
 plt.show()
